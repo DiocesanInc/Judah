@@ -1,0 +1,42 @@
+.page-template-tabs {
+    .tabs-container {
+        display: flex;
+        gap: 30px;
+        padding-bottom: 40px;
+        overflow: auto;
+
+        .the-button {
+            white-space: nowrap;
+            background: var(--clr-primary);
+            color: white;
+
+            &.active {
+                background: white;
+                color: var(--clr-primary);
+            }
+
+            &:hover {
+                background: white;
+                color: var(--clr-primary);
+
+                &::before {
+                    color: var(--clr-primary);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        .limit-width {
+            // margin-inline: 10% 5%;
+        }
+
+        .content {
+            display: grid;
+        }
+
+        .tabs-container {
+            overflow: unset;
+        }
+    }
+}

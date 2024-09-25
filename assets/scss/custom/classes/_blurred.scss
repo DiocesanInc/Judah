@@ -1,0 +1,72 @@
+// @supports not (-webkit-touch-callout: none) {
+/* CSS for other than iOS devices */
+.blurred,
+.header-blurred:not(.sticky),
+.header-blurred-sticky.sticky,
+.news-slide.slick-current .post-wrapper.blurry,
+.slick-arrow {
+    --blur: 30px;
+    --blur-color: white;
+    --blur-opacity: 0.2;
+
+    backdrop-filter: blur(var(--blur));
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--blur-color);
+        opacity: var(--blur-opacity);
+        border-radius: 20px;
+    }
+
+    &.site-header::after {
+        border-radius: 0;
+    }
+}
+
+.header-blurred:not(.sticky),
+.header-blurred-sticky.sticky {
+    --blur-color: black;
+}
+
+.header-blurred,
+.header-blurred-sticky {
+    .the-header {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.blurred-on-hover {
+    --blur: 30px;
+    --blur-color: white;
+    --blur-opacity: 0.2;
+
+    backdrop-filter: blur(var(--blur));
+
+    &::before {
+        opacity: 0;
+        background: var(--blur-color);
+        transition: var(--tr-opacity);
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    &:hover::before {
+        opacity: var(--blur-opacity);
+    }
+}
+
+.blurred-hover,
+.slick-arrow {
+    &::after {
+        transition: var(--tr-opacity);
+    }
+
+    &:hover::after {
+        opacity: 0.1;
+    }
+}
+// }

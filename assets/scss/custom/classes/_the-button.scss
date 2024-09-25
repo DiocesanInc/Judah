@@ -1,0 +1,177 @@
+.the-button {
+  border: 3px solid var(--button-border-color);
+  border-radius: 20px;
+  color: var(--button-font-color);
+  background: var(--button-background-color);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 10px 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+  box-shadow: var(--box-shadow);
+
+  &::before {
+    content: "\f061";
+    font-family: "Font Awesome 5 Free";
+    speak: none;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    height: 100%;
+    font-size: 125%;
+    color: var(--button-font-color-hover);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    left: 70%;
+    opacity: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-background-color-hover);
+    color: var(--button-font-color-hover);
+    text-decoration: none;
+
+    &::before {
+      left: calc(100% - 40px);
+      opacity: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+  }
+
+  //   &:hover {
+  //     color: white;
+  //     box-shadow: 0 3px 6px 0 var(--button-border-color);
+  //     background-color: var(--button-background-color-hover);
+
+  //     transition: all 0.2s ease-out;
+
+  //     &:before {
+  //       animation: shine 0.4s 0s linear;
+  //     }
+  //   }
+
+  //   &:active {
+  //     box-shadow: 0 0 0 0 transparent;
+  //     transition: box-shadow 0.2s ease-in;
+  //   }
+
+  //   &:before {
+  //     content: "";
+  //     display: block;
+  //     width: 0px;
+  //     height: 86%;
+  //     position: absolute;
+  //     top: 7%;
+  //     left: 0%;
+
+  //     opacity: 0;
+  //     background: white;
+  //     box-shadow: 0 0 15px 3px white;
+  //     transform: skewX(-20deg);
+  //   }
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     width: 60px;
+  //     height: 60px;
+  //     border: 10px solid rgba(111, 148, 182, 0.2);
+  //     border-radius: 50%;
+  //     opacity: 0;
+  //   }
+  //   &.clicked::after {
+  //     animation: button-click 0.3s forwards;
+  //   }
+  //   &:focus::after {
+  //     animation: button-click 0.3s forwards;
+  //   }
+}
+
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+// .the-button {
+//   background: var(--button-background-color, var(--clr-quaternary));
+//   color: var(--button-font-color, white);
+//   padding: 0.6rem 1.2rem;
+//   text-decoration: none;
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid var(--button-border-color, var(--clr-quaternary));
+//   border-radius: 20px;
+//   box-shadow: var(--box-shadow);
+//   transition: var(--tr-background), var(--tr-transform), var(--tr-color);
+//   font-size: var(--fs-500);
+//   cursor: pointer;
+//   text-transform: uppercase;
+//   font-weight: bold;
+//   position: relative;
+//   &:hover,
+//   &:focus {
+//     text-decoration: none;
+//     background: var(--button-background-color-hover, white);
+//     color: var(--button-font-color-hover, var(--clr-quaternary));
+//     border: 1px solid var(--button-border-color, var(--clr-quaternary));
+//     // transform: var(--scale);
+//     font-weight: bold;
+//   }
+
+// }
+
+@keyframes button-click {
+  0% {
+    transform: scale3d(0.3, 0.3, 1);
+  }
+  25%,
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}

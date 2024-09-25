@@ -1,0 +1,20 @@
+.judah-hybrid .simcal-event-bubble {
+    background: transparent;
+    backdrop-filter: blur(30px);
+    border: 1px solid white;
+    border-radius: 20px;
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: white;
+        opacity: 0.2;
+        border-radius: 20px;
+    }
+}

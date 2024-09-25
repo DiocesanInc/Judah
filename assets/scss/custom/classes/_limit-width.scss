@@ -1,0 +1,12 @@
+.limit-width {
+    max-width: 1200px;
+    margin: auto;
+}
+#primary .entry-content.limit-width {
+    max-width: 90%;
+    margin-inline: auto;
+
+    @media screen and (min-width: $desktop) {
+        max-width: 1200px;
+    }
+}

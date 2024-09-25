@@ -1,0 +1,160 @@
+//main:../../../../style.scss
+.page-template-page-mass-times {
+  .entry-header {
+    height: 0vh;
+    .entry-title {
+      display: none;
+    }
+  }
+  .tabs-container {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0;
+    }
+    width: 90vw;
+    position: relative;
+    z-index: 10;
+    border: 1px solid white;
+    border-radius: 34px;
+    display: flex;
+    .tabs-bar {
+      &.closed {
+        display: none;
+      }
+      width: 100%;
+      position: relative;
+      padding: 40px 30px;
+      .tabs-tabs {
+        display: flex;
+        flex-direction: column;
+        .nav-tab {
+          cursor: pointer;
+          position: relative;
+          &.active {
+            text-decoration: underline;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+          &::after {
+            content: "\f061";
+            right: 0;
+            position: absolute;
+            color: #fff;
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
+            font-style: normal;
+          }
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: white;
+        opacity: 0;
+        border-radius: 34px;
+      }
+      @media screen and (min-width: $tablet) {
+        border-right: 1px solid #fff;
+        width: 33%;
+        .tabs-tabs .nav-tab {
+          &::after {
+            content: none;
+          }
+        }
+        &::before {
+          opacity: 0.5;
+          border-radius: 34px 0 0 20px;
+        }
+      }
+    }
+    .mass-times-container {
+      &.closed {
+        display: none;
+      }
+      padding: 40px 30px;
+      width: 100%;
+      .tab-content {
+        display: none;
+        &.active {
+          display: block;
+        }
+        .mass-times-type {
+          font-style: normal;
+        }
+        .back-button {
+          cursor: pointer;
+          position: relative;
+          padding-left: 30px;
+          &::before {
+            content: "\f060";
+            left: 0;
+            position: absolute;
+            color: #fff;
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
+          }
+        }
+        .mass-times-section {
+          .mass-time.teaser-box {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 30px 40px;
+            border-radius: 34px;
+            &::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: white;
+              opacity: 0.2;
+              border-radius: 34px;
+            }
+            .mass-time-day {
+              font-size: 1.5rem;
+              text-align: left;
+            }
+            .mass-time-time {
+              display: flex;
+              flex-wrap: wrap;
+            }
+          }
+        }
+      }
+      @media screen and (min-width: $tablet) {
+        display: block;
+        .tab-content {
+          .mass-times-type {
+          }
+          .back-button {
+            display: none;
+          }
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: white;
+      opacity: 0.2;
+      border-radius: 34px;
+      z-index: -1;
+    }
+
+    @media screen and (min-width: $tablet) {
+      min-height: 900px;
+      .tabs-bar,
+      .mass-times-container {
+        &.closed {
+          display: block;
+        }
+      }
+    }
+  }
+}

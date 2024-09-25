@@ -1,0 +1,95 @@
+<?php
+
+function acf_hero_buttons()
+{
+    return array(
+        array(
+			'key' => 'field_63f3dee87c143',
+			'label' => 'Hero Buttons',
+			'name' => '',
+			'aria-label' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+		),
+		array(
+			'key' => 'field_63f3def37c144',
+			'label' => 'Hero Buttons',
+			'name' => 'hero_buttons',
+			'aria-label' => '',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'layout' => 'table',
+			'pagination' => 0,
+			'min' => 0,
+			'max' => 6,
+			'collapsed' => 'field_63f3df017c145',
+			'button_label' => 'Add Button',
+			'rows_per_page' => 20,
+			'sub_fields' => array(
+				array(
+					'key' => 'field_63f3df017c145',
+					'label' => 'Link',
+					'name' => 'link',
+					'aria-label' => '',
+					'type' => 'link',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '60',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'parent_repeater' => 'field_63f3def37c144',
+				),
+				array(
+					'key' => 'field_63f3df107c146',
+					'label' => 'Icon',
+					'name' => 'icon',
+					'aria-label' => '',
+					'type' => 'font-awesome',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '40',
+						'class' => '',
+						'id' => '',
+					),
+					'icon_sets' => array(
+						0 => 'far',
+						1 => 'fas',
+					),
+					'custom_icon_set' => '',
+					'default_label' => '',
+					'default_value' => '',
+					'save_format' => 'element',
+					'allow_null' => 0,
+					'show_preview' => 1,
+					'enqueue_fa' => 0,
+					'fa_live_preview' => '',
+					'choices' => array(
+					),
+					'parent_repeater' => 'field_63f3def37c144',
+				),
+			),
+        ),
+    );
+}

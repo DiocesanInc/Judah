@@ -1,0 +1,13 @@
+body,
+html {
+  overflow-x: hidden;
+  background-color: var(--clr-body, white);
+}
+
+body:not(.page-template-page-landing) .content-area {
+  padding: var(--content-inset);
+}
+
+html.no-scroll {
+  overflow-y: hidden;
+}

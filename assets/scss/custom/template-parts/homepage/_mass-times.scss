@@ -1,0 +1,139 @@
+//main:../../../../../style.scss
+&.mass-times-container {
+    .banner-img {
+      // position: absolute;
+    }
+    .slick-track {
+        // display: flex;
+        // height: auto;
+        .slick-slide {
+            // height: inherit;
+            // translate: 200% 0;
+        }
+    }
+
+    .banner-item-heading {
+        margin-right: 1ch;
+
+        &:after {
+            // content: "-";
+        }
+    }
+
+    .mass-times-day.banner-item-heading,
+    .mass-times-item-label,
+    .mass-times-item-time {
+        font-size: clamp(20px, 2.5vw, 25px);
+        color: white;
+    }
+
+    .mass-times-item-label {
+        // margin-left: 1ch;
+    }
+
+    .slick-dots {
+        margin-top: 130px;
+    }
+
+    .mass-times-link {
+      position: absolute;
+      bottom: 60px;
+    }
+
+    .mass-times {
+        min-height: 470px;
+        margin-top: -20%;
+        max-width: 95%;
+        margin-inline: auto 0;
+        .slick-list {
+          overflow: visible;
+              .mass-times-items {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  row-gap: 15px;
+                  .mass-times-item {
+                      flex: 0 25%;
+                      flex-direction: column;
+                  }
+              }
+        }
+        button {
+          left: 0;
+          bottom: 0;
+          top: unset;
+          transform: translate(0, 165%);
+          &.slick-prev {
+            margin-left: 37%;
+          }
+          &.slick-next {
+            margin-left: 53%;
+          }
+        }
+    }
+    @media screen and (min-width: $laptop) {
+        .mass-times {
+            min-height: 800px;
+            overflow: hidden;
+            .slick-list {
+              margin-top: 100px;
+            }
+            button {
+              top: 50%;
+              bottom: unset;
+              transform: translate(0, -50%);
+              border: 3px solid var(--button-border-color);
+              border-radius: 20px;
+              color: var(--button-font-color-hover);
+              background: var(--button-background-color);
+              overflow: hidden;
+              cursor: pointer;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              text-transform: uppercase;
+              outline: none;
+              transition: all 0.3s;
+              box-shadow: var(--box-shadow);
+              &.slick-prev {
+                left: calc(26px + 1%);
+                margin-left: 0;
+              }
+              &.slick-next {
+                right: calc(26px + 1%);
+                left: unset;
+                margin-left: 0;
+              }
+              &::before {
+                color: var(--button-font-color);
+              }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .mass-times {
+            button {
+              &.slick-prev {
+                left: 10px;
+              }
+              &.slick-next {
+                right: 10px;
+              }
+            }
+            .mass-times-items {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 15px;
+                .mass-times-item {
+                    flex: 0 25%;
+                    flex-direction: column;
+                }
+                .slick-dots {
+                    margin-block: 100px 30px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.quicklinks-top-container {
+  #footer-quicklinks-top {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: left;
+    gap: 10px;
+
+    .main-menu-item {
+      text-align: left;
+    }
+  }
+}

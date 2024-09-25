@@ -1,0 +1,116 @@
+//main:../../../../../style.scss
+.news-heading {
+    margin-top: calc(var(--homepage-section-spacing) + 65px);
+    margin-bottom: 45px;
+    color: white;
+    text-align: center;
+    @media screen and (min-width: $laptop) {
+        margin-top: calc(var(--homepage-section-spacing) + 40px);
+    }
+}
+
+.news-container {
+    z-index: 10;
+    margin-bottom: 150px;
+
+    .slick-list {
+        overflow: visible;
+    }
+
+    .news-slide {
+        margin-inline: 40px;
+
+        @media screen and (min-width: $tablet) {
+            margin-inline: 30px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            margin-inline: 50px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            margin-inline: 70px;
+        }
+    }
+
+    .slick-slide .post-wrapper {
+        transition: var(--tr-transform);
+    }
+
+    .slick-center .post-wrapper {
+        transform: scale(1.1);
+        transition: var(--tr-transform);
+        transition-delay: 0.5s;
+        position: relative;
+    }
+
+    .post-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        flex-direction: row;
+        gap: clamp(15px, 2.5vw, 45px);
+        border: 1px solid white;
+        border-radius: 35px;
+        padding: 45px;
+        height: 100%;
+
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::after {
+            border-radius: 35px;
+        }
+
+        img {
+            border-radius: 20px;
+            // height: 100%;
+            max-height: 40vh;
+            object-fit: cover;
+
+            @media screen and (min-width: $tablet) {
+                height: 100%;
+            }
+        }
+
+        .post-content-wrapper {
+            color: white;
+        }
+
+        .post-heading {
+            font-size: clamp(25px, 2vw, 40px);
+            margin-block: 0 clamp(20px, 2.5vw, 60px);
+            position: relative;
+            color: white;
+        }
+
+        .post-excerpt {
+            font-size: clamp(16px, 1.5vw, 23px);
+            margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            grid-template-columns: 3fr 4fr;
+        }
+    }
+
+    .slick-arrow {
+        bottom: -100px;
+        top: auto;
+        z-index: 1;
+        left: 0;
+        transform: translateX(-50%);
+
+        &.slick-prev {
+            margin-left: 43%;
+        }
+
+        &.slick-next {
+            margin-left: 57%;
+        }
+        &::before {
+            color: var(--button-font-color);
+        }
+    }
+}

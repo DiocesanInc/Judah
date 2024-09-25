@@ -1,0 +1,13 @@
+.the-header {
+  height: 100%;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: calc(90% - 60px);
+  height: 100%;
+
+  @import "site-branding";
+}

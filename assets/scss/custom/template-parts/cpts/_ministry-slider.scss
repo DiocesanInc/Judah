@@ -1,0 +1,58 @@
+.ministry-slider {
+  .ministry-group {
+    cursor: pointer;
+
+    .teaser-box h2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 26px;
+      padding-top: 25px;
+      padding-inline: 10px;
+    }
+
+    .teaser-image-wrapper img {
+      aspect-ratio: 1 / 1;
+    }
+
+    .slick-arrow {
+      border-color: white;
+      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+      &.slick-disabled {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .slick-prev {
+      z-index: 1;
+    }
+
+    @media screen and (min-width: $desktop) {
+      .slick-next {
+        right: -5%;
+      }
+      .slick-prev {
+        left: -5%;
+      }
+    }
+    .slick-list {
+      overflow: visible;
+
+      .slick-track {
+        // gap: 20px;
+
+        .slick-slide {
+          transition: var(--tr-opacity);
+          margin-inline: 10px;
+
+          &:not(.slick-active) {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

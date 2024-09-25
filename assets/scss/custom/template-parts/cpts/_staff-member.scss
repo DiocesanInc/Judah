@@ -1,0 +1,33 @@
+.staff-member {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .teaser-image-wrapper {
+        padding-top: 0;
+
+        img {
+            aspect-ratio: 3 / 4;
+        }
+    }
+
+    .staff-member-position {
+        margin-block: 0;
+    }
+
+    .links-container {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: flex-end;
+
+        .the-button {
+            padding-inline: 20px;
+
+            &::before,
+            &::after {
+                content: unset;
+            }
+        }
+    }
+}

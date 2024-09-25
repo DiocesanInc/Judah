@@ -1,0 +1,43 @@
+.entry-header {
+    height: var(--hero-height);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: calc(var(--header-height) + 50px);
+    border-radius: 34px;
+
+    @media screen and (min-width: $laptop) {
+        aspect-ratio: 12/7;
+        margin-inline: auto;
+        width: 1200px;
+    }
+    .entry-title {
+        z-index: 2;
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        padding: 20px 35px;
+        border: 1px solid white;
+        border-radius: 20px;
+        text-align: center;
+
+        &::after {
+            border-radius: 20px;
+        }
+    }
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, black, transparent);
+        z-index: 1;
+    }
+    &.page-header {
+        .entry-title {
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+        }
+    }
+}

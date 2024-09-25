@@ -1,0 +1,101 @@
+.hero-buttons-container {
+  --cols: 2;
+  // display: flex;
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 2), 1fr);
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+  z-index: 10;
+  margin-top: var(--homepage-section-spacing);
+  max-width: 90%;
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    gap: 25px;
+    max-width: 80%;
+
+    &:has(:nth-child(2):is(:last-child)) {
+      --cols: 2;
+    }
+
+    &:has(:nth-child(3):is(:last-child)) {
+      --cols: 3;
+    }
+
+    &:has(:nth-child(4):is(:last-child)) {
+      --cols: 2;
+    }
+
+    &:has(:nth-child(5):is(:last-child)) {
+      --cols: 3;
+    }
+
+    &:has(:nth-child(6):is(:last-child)) {
+      --cols: 3;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    translate: 0 -40%;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:has(:nth-child(2):is(:last-child)) {
+      --cols: 2;
+    }
+
+    &:has(:nth-child(3):is(:last-child)) {
+      --cols: 3;
+    }
+
+    &:has(:nth-child(4):is(:last-child)) {
+      --cols: 4;
+    }
+
+    &:has(:nth-child(5):is(:last-child)) {
+      --cols: 5;
+    }
+
+    &:has(:nth-child(6):is(:last-child)) {
+      --cols: 6;
+    }
+  }
+
+  .hero-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: clamp(18px, 2.5vw, 25px);
+    color: white;
+    text-decoration: none;
+    transition: var(--tr-background), var(--tr-color);
+    // width: 200px;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      border-radius: 20px;
+    }
+
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media screen and (min-width: $tablet) {
+      padding: 15px 30px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/** Header Search styling **/
+.mega-menu-item.search-container {
+    .header-search {
+        cursor: pointer;
+    }
+
+    &.mobile-search {
+        display: block !important;
+    }
+
+    &.desktop-search {
+        display: none !important;
+    }
+
+    @media screen and (min-width: $desktop) {
+        &.mobile-search {
+            display: none !important;
+        }
+
+        &.desktop-search {
+            display: block !important;
+        }
+    }
+}
+
+.header-search {
+    color: var(--default-menu-top-level-default-font-color, #ffffff);
+    &:hover {
+        color: var(--default-menu-top-level-hover-font-color, #ffffff);
+    }
+}
+@media screen and (min-width: $desktop) {
+    &.sticky .header-search {
+        color: var(--sticky-menu-top-level-default-font-color, #ffffff);
+        &:hover {
+            color: var(--sticky-menu-top-level-hover-font-color, #ffffff);
+        }
+    }
+}
