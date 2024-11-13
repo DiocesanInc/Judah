@@ -60,7 +60,7 @@ if (!$bkgd) {
 
 ?> {
     height: 360px;
-    min-width: 320px;
+    min-width: 150px;
     margin-bottom: 1.75rem;
 }
 

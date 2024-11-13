@@ -29,10 +29,34 @@ switch ($headingBackgroundColor) {
     case 'var(--clr-quaternary)':
         $tmpClr = "quaternary";
         break;
+    case 'black':
+        $tmpClr = "black";
+        break;
+    case 'white':
+        $tmpClr = "white";
+        break;
 }
 
 $tmpClrVar = "var(--clr-$tmpClr)";
 $tmpClrVar2 = "var(--clr-$tmpClr-2)";
+
+switch ($tmpClrVar){
+	case 'var(--clr-black)':
+		$tmpClrVar = 'black';
+		break;
+	case 'var(--clr-white)':
+		$tmpClrVar = 'white';
+		break;
+}
+
+switch ($tmpClrVar2){
+	case 'var(--clr-black-2)':
+		$tmpClrVar2 = 'black';
+		break;
+	case 'var(--clr-white-2)':
+		$tmpClrVar2 = 'white';
+		break;
+}
 
 $headingBackgroundColorActive = get_field($tmpClr . "_color", 'options')["is_gradient"] ? "linear-gradient(90deg, $tmpClrVar, $tmpClrVar2)" : $tmpClrVar;
 
