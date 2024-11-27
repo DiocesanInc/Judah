@@ -53,20 +53,27 @@ function getDefaultPlaceholderImage()
     return get_template_directory_uri() . "/assets/img/evoli_placeholder.png";
 }
 
-function add_custom_class_to_buttons( $block_content, $block ) {
+function add_custom_class_to_buttons($block_content, $block)
+{
     // Check if the block is a button block
-    if ( 'core/button' === $block['blockName'] ) {
+    if ('core/button' === $block['blockName']) {
         // Add your custom class to the block
-        $block_content = str_replace( 'wp-block-button__link', 'wp-block-button__link the-button', $block_content );
+        $block_content = str_replace('wp-block-button__link', 'wp-block-button__link the-button', $block_content);
     }
 
     return $block_content;
 }
-add_filter( 'render_block', 'add_custom_class_to_buttons', 10, 2 );
+add_filter('render_block', 'add_custom_class_to_buttons', 10, 2);
 
 require get_template_directory() . "/update-checker/plugin-update-checker.php";
-$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://hybrid-updates.diocesanweb.org/hybrids/judah/theme.json', //Metadata URL.
-    __FILE__, //Full path to the main plugin file.
-    'judah' //Plugin slug. Usually it's the same as the name of the directory.
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/DiocesanInc/Judah',
+    __FILE__,
+    'judah'
 );
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
