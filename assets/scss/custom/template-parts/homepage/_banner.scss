@@ -50,7 +50,7 @@
           min-height: 470px;
 
           &.slick-active {
-            transform: scale(1.1);
+            transform: scale(1.075);
             transition: var(--tr-transform);
             transition-delay: 0.5s;
           }
