@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: St. Judah Hybrid Theme by Diocesan
-Version: 1.1.1
+Version: 1.1.2
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -3428,10 +3428,6 @@ main .entry-header.page-header .entry-title {
 .news-container .slick-arrow.slick-next {
   margin-left: 57%;
 }
-.news-container .slick-arrow::before {
-  color: var(--button-font-color);
-}
-
 .gallery-container {
   margin-top: var(--homepage-section-spacing);
   z-index: 10;
