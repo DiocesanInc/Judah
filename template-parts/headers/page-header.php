@@ -8,9 +8,9 @@
  * @package celine
  */
 
-if ($args["headerImg"]) {
+if (isset($args["headerImg"])) {
     //Header Image is set in arguments
-    $headerImg = $args["headerImg"];
+    $headerImg = $args["headerImg"] ?? '';
 } elseif (get_post_type() === "staff") {
     $headerImg = getDefaultFeaturedImage(true);
 } elseif (get_post_meta($post->ID, "_page_header_image_id")) {
