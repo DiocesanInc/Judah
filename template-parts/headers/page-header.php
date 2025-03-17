@@ -13,6 +13,8 @@ if (isset($args["headerImg"])) {
     $headerImg = $args["headerImg"] ?? '';
 } elseif (get_post_type() === "staff") {
     $headerImg = getDefaultFeaturedImage(true);
+} elseif (get_post_type() === "ministry") {
+    $headerImg = get_the_post_thumbnail_url(null, "large");
 } elseif (get_post_meta($post->ID, "_page_header_image_id")) {
     //Separate Header Image is set (Page Header Image)
     $headerImg = wp_get_attachment_image_url(get_post_meta($post->ID, "_page_header_image_id")[0], "large");
