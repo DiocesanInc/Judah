@@ -75,10 +75,16 @@ if (acfIsInstalled()) {
         add_filter("acf/format_value/type=image", "customAcfRenderField");
     }
 
+if (!function_exists('load_acf_file')) {
     function load_acf_file($filename)
     {
-        include_once get_template_directory() . "/acf/$filename.php";
+        if (is_child_theme() === true && file_exists(get_stylesheet_directory() . "/acf/$filename.php")) {
+            include_once get_stylesheet_directory() . "/acf/$filename.php";
+        } else {
+            include_once get_template_directory() . "/acf/$filename.php";
+        }
     }
+}
 
     load_acf_file("homepage");
     load_acf_file("ministry-group-order");
