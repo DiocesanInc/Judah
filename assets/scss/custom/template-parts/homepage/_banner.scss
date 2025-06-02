@@ -10,14 +10,6 @@
             max-width: 50%;
             margin-top: 0;
         }
-        @media screen and (min-width: $desktop) {
-            .banner-container.mass-times-container .mass-times button.slick-next {
-                right: 30px;
-            }
-            .banner-container.mass-times-container .mass-times button.slick-prev {
-                left: 30px;
-            }
-        }
     }
 
     .banner-img {
@@ -25,12 +17,6 @@
         max-height: 300px;
         object-fit: cover;
         border-radius: 35px;
-
-        @media screen and (min-width: $laptop) {
-            width: 80%;
-            height: 700px;
-            max-height: none;
-        }
     }
 
     .banner-heading {

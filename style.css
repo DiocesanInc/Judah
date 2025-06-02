@@ -3100,27 +3100,12 @@ main .entry-header.page-header .entry-title {
     margin-top: 0;
   }
 }
-@media screen and (min-width: 1280px) {
-  .banner-container.mass-times-container .banner-content-wrapper.mass-times .banner-container.mass-times-container .mass-times button.slick-next {
-    right: 30px;
-  }
-  .banner-container.mass-times-container .banner-content-wrapper.mass-times .banner-container.mass-times-container .mass-times button.slick-prev {
-    left: 30px;
-  }
-}
 .banner-container .banner-img {
   width: 90%;
   max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 35px;
-}
-@media screen and (min-width: 992px) {
-  .banner-container .banner-img {
-    width: 80%;
-    height: 700px;
-    max-height: none;
-  }
 }
 .banner-container .banner-heading {
   font-weight: normal;
@@ -3190,6 +3175,13 @@ main .entry-header.page-header .entry-title {
 .banner-container .banner-content-wrapper .banner-content .slick-dots {
   margin-block: 30px 40px;
   text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .banner-container.mass-times-container .banner-img {
+    width: 80%;
+    height: 700px;
+    max-height: none;
+  }
 }
 .banner-container.mass-times-container .banner-item-heading {
   margin-right: 1ch;
@@ -3266,11 +3258,11 @@ main .entry-header.page-header .entry-title {
     box-shadow: var(--box-shadow);
   }
   .banner-container.mass-times-container .mass-times button.slick-prev {
-    left: calc(26px + 1%);
+    left: 30px;
     margin-left: 0;
   }
   .banner-container.mass-times-container .mass-times button.slick-next {
-    right: calc(26px + 1%);
+    right: 30px;
     left: unset;
     margin-left: 0;
   }
@@ -3279,12 +3271,6 @@ main .entry-header.page-header .entry-title {
   }
 }
 @media screen and (min-width: 1280px) {
-  .banner-container.mass-times-container .mass-times button.slick-prev {
-    left: 10px;
-  }
-  .banner-container.mass-times-container .mass-times button.slick-next {
-    right: 10px;
-  }
   .banner-container.mass-times-container .mass-times .mass-times-items {
     display: flex;
     flex-direction: column;
