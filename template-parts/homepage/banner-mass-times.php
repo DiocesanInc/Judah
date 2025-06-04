@@ -14,6 +14,7 @@
     <?php while (have_rows("mass_times_days", "options")) : the_row() ?>
     <div class="banner-content">
       <div class="banner-content-flex">
+        <div class="inner-banner-flex">
         <?php if (get_sub_field("mass_times_type")) : ?>
         <h1 class="banner-heading"><?php the_sub_field("mass_times_type"); ?>
         </h1>
@@ -41,6 +42,7 @@
                 // $i++;
                 endwhile; ?>
             </div>
+        </div>
         </div>
         <div class="mass-times-link">
             <a href="<?php echo get_field("mass_times_link")["url"]; ?>" class="the-button" title="Full Schedule">
