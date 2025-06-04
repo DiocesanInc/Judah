@@ -23,6 +23,7 @@
     margin-top: -5%;
     width: 90%;
     flex: 2;
+    backdrop-filter: blur(30px);
 
     &::after {
         content: "";
@@ -69,6 +70,9 @@
         }
     }
 
+    @media screen and (min-width: $tablet) {
+        backdrop-filter: none;
+    }
     @media screen and (min-width: $desktop) {
         margin-block: auto;
         margin-right: -12%;

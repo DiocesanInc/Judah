@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: St. Judah Hybrid Theme by Diocesan
-Version: 1.1.5
+Version: 1.1.6
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -2749,14 +2749,19 @@ main .entry-header.page-header .entry-title {
   gap: 15px;
   position: relative;
   z-index: 10;
-  margin-top: var(--homepage-section-spacing);
+  margin-top: calc(var(--homepage-section-spacing) + 20px);
   max-width: 90%;
   width: 100%;
+}
+.hero-buttons-container h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 @media screen and (min-width: 768px) {
   .hero-buttons-container {
     gap: 25px;
     max-width: 80%;
+    margin-top: var(--homepage-section-spacing);
   }
   .hero-buttons-container:has(:nth-child(2):is(:last-child)) {
     --cols: 2;
@@ -2778,6 +2783,10 @@ main .entry-header.page-header .entry-title {
   .hero-buttons-container {
     translate: 0 -40%;
     margin-top: 0;
+  }
+  .hero-buttons-container h2 {
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -2856,6 +2865,8 @@ main .entry-header.page-header .entry-title {
   margin-top: -5%;
   width: 90%;
   flex: 2;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
 }
 .mission-content-wrapper::after {
   content: "";
@@ -2895,6 +2906,12 @@ main .entry-header.page-header .entry-title {
 @media screen and (min-width: 768px) {
   .mission-content-wrapper .mission-button-wrapper {
     flex-direction: row;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mission-content-wrapper {
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -3183,6 +3200,15 @@ main .entry-header.page-header .entry-title {
     max-height: none;
   }
 }
+.banner-container.mass-times-container .banner-content-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.banner-container.mass-times-container .banner-content-flex .banner-heading {
+  margin-block: 0;
+}
 .banner-container.mass-times-container .banner-item-heading {
   margin-right: 1ch;
 }
@@ -3195,15 +3221,20 @@ main .entry-header.page-header .entry-title {
 .banner-container.mass-times-container .slick-dots {
   margin-top: 130px;
 }
-.banner-container.mass-times-container .mass-times-link {
-  position: absolute;
-  bottom: 60px;
+.banner-container.mass-times-container .mass-times-link .the-button {
+  padding: 10px 40px;
+}
+@media screen and (min-width: 768px) {
+  .banner-container.mass-times-container .mass-times-link .the-button {
+    padding: 10px 60px;
+  }
 }
 .banner-container.mass-times-container .mass-times {
   min-height: 470px;
   margin-top: -20%;
   max-width: 95%;
   margin-inline: auto 0;
+  margin-bottom: 150px;
 }
 .banner-container.mass-times-container .mass-times .slick-list {
   overflow: visible;
@@ -3218,6 +3249,10 @@ main .entry-header.page-header .entry-title {
   flex: 0 25%;
   flex-direction: column;
 }
+.banner-container.mass-times-container .mass-times .slick-list .mass-times-items .mass-times-item .banner-item-content {
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
 .banner-container.mass-times-container .mass-times button {
   left: 0;
   bottom: 0;
@@ -3229,6 +3264,13 @@ main .entry-header.page-header .entry-title {
 }
 .banner-container.mass-times-container .mass-times button.slick-next {
   margin-left: 53%;
+}
+@media screen and (min-width: 425px) {
+  .banner-container.mass-times-container .mass-times .slick-list .mass-times-items .mass-times-item .banner-item-content {
+    flex-direction: row;
+    margin-bottom: 0;
+    flex-wrap: nowrap;
+  }
 }
 @media screen and (min-width: 992px) {
   .banner-container.mass-times-container .mass-times {

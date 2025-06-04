@@ -7,13 +7,14 @@
             max-height: none;
         }
     }
-    .slick-track {
-        // display: flex;
-        // height: auto;
-        .slick-slide {
-            // height: inherit;
-            // translate: 200% 0;
-        }
+    .banner-content-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .banner-heading {
+        margin-block: 0;
+      }
     }
 
     .banner-item-heading {
@@ -40,8 +41,12 @@
     }
 
     .mass-times-link {
-      position: absolute;
-      bottom: 60px;
+      .the-button {
+        padding: 10px 40px;
+        @media screen and (min-width: $tablet) {
+          padding: 10px 60px;
+        }
+      }
     }
 
     .mass-times {
@@ -49,6 +54,7 @@
         margin-top: -20%;
         max-width: 95%;
         margin-inline: auto 0;
+        margin-bottom: 150px;
         .slick-list {
           overflow: visible;
               .mass-times-items {
@@ -59,6 +65,10 @@
                   .mass-times-item {
                       flex: 0 25%;
                       flex-direction: column;
+                      .banner-item-content {
+                        margin-bottom: 10px;
+                        flex-wrap: wrap;
+                      }
                   }
               }
         }
@@ -72,6 +82,21 @@
           }
           &.slick-next {
             margin-left: 53%;
+          }
+        }
+    }
+    @media screen and (min-width: $phone) {
+        .mass-times {
+          .slick-list {
+            .mass-times-items {
+              .mass-times-item {
+                .banner-item-content {
+                  flex-direction: row;
+                  margin-bottom: 0;
+                  flex-wrap: nowrap;
+                }
+              }
+            }
           }
         }
     }
